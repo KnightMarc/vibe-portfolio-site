@@ -24,9 +24,6 @@
   - `chore: initial commit`
   - `docs: add agent notes`
 - Pending changes to commit:
-  - Contact form wired to Formspree endpoint `https://formspree.io/f/manrpdya` with loading, success/error states, validation hints, and privacy note.
-  - Updated hero copy to reflect BSIT/Network Administration background.
-  - Updated about copy to highlight BSIT, network admin, AI-assisted dev focus.
-  - Replaced `agent.mb` with `agent.md` (notes file).
-- Suggested commit message for current changes: `feat: enhance contact form`
+  - UI polish: global transitions on nav/buttons/cards; hero spacing/typography tweaks; nav hover underline/padding; about/projects/contact spacing refinements; project cards hover shadow/border accent + tech pill tags; contact form spacing/success message polish.
+- Suggested commit message for current changes: `style: polish ui interactions`
 

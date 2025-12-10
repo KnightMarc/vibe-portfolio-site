@@ -45,9 +45,9 @@ function Contact() {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="grid gap-6 rounded-2xl border border-black/10 bg-white p-8 shadow-sm sm:grid-cols-2"
+        className="grid gap-6 rounded-2xl border border-black/10 bg-white p-8 shadow-sm sm:grid-cols-2 sm:gap-6 space-y-4 sm:space-y-0"
       >
-        <label className="flex flex-col gap-2 text-sm font-medium">
+        <label className="flex flex-col gap-3 text-sm font-medium">
           Name
           <input
             type="text"
@@ -58,7 +58,7 @@ function Contact() {
           />
           <span className="text-xs text-black/50">Please enter your full name.</span>
         </label>
-        <label className="flex flex-col gap-2 text-sm font-medium">
+        <label className="flex flex-col gap-3 text-sm font-medium">
           Email
           <input
             type="email"
@@ -69,7 +69,7 @@ function Contact() {
           />
           <span className="text-xs text-black/50">We’ll reply to this address.</span>
         </label>
-        <label className="flex flex-col gap-2 text-sm font-medium sm:col-span-2">
+        <label className="flex flex-col gap-3 text-sm font-medium sm:col-span-2">
           Message
           <textarea
             name="message"
@@ -81,12 +81,12 @@ function Contact() {
           <span className="text-xs text-black/50">Include scope, timeline, or links if available.</span>
         </label>
         {status === 'success' && (
-          <div className="sm:col-span-2 rounded-xl border border-green-500/30 bg-green-50 px-4 py-3 text-sm text-green-700">
+          <div className="sm:col-span-2 mt-4 rounded-xl border border-green-500/30 bg-green-50 px-4 py-3 text-sm text-green-700">
             {feedback}
           </div>
         )}
         {status === 'error' && (
-          <div className="sm:col-span-2 rounded-xl border border-red-500/30 bg-red-50 px-4 py-3 text-sm text-red-700">
+          <div className="sm:col-span-2 mt-4 rounded-xl border border-red-500/30 bg-red-50 px-4 py-3 text-sm text-red-700">
             {feedback}
           </div>
         )}
@@ -94,7 +94,7 @@ function Contact() {
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="inline-flex w-full items-center justify-center rounded-full bg-violentBlue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-violentBlue/20 transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violentBlue focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-full bg-violentBlue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-violentBlue/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violentBlue focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
           >
             {status === 'loading' ? 'Sending…' : 'Send Message'}
           </button>
