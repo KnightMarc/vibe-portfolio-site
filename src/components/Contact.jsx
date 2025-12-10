@@ -1,4 +1,37 @@
+import { useState } from 'react';
+
 function Contact() {
+  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [feedback, setFeedback] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+
+    try {
+      setStatus('loading');
+      setFeedback('');
+      const response = await fetch('https://formspree.io/f/manrpdya', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFeedback('Thanks for reaching out! I will get back to you soon.');
+        form.reset();
+      } else {
+        setStatus('error');
+        setFeedback('Something went wrong. Please try again or email me directly.');
+      }
+    } catch (error) {
+      setStatus('error');
+      setFeedback('Network error. Please try again in a moment.');
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -11,8 +44,7 @@ function Contact() {
         </p>
       </div>
       <form
-        action="https://formspree.io/f/placeholder"
-        method="POST"
+        onSubmit={handleSubmit}
         className="grid gap-6 rounded-2xl border border-black/10 bg-white p-8 shadow-sm sm:grid-cols-2"
       >
         <label className="flex flex-col gap-2 text-sm font-medium">
@@ -24,6 +56,7 @@ function Contact() {
             required
             className="rounded-xl border border-black/15 px-4 py-3 text-sm font-normal text-black/80 outline-none transition focus:border-violentBlue focus:ring-2 focus:ring-violentBlue/40"
           />
+          <span className="text-xs text-black/50">Please enter your full name.</span>
         </label>
         <label className="flex flex-col gap-2 text-sm font-medium">
           Email
@@ -34,6 +67,7 @@ function Contact() {
             required
             className="rounded-xl border border-black/15 px-4 py-3 text-sm font-normal text-black/80 outline-none transition focus:border-violentBlue focus:ring-2 focus:ring-violentBlue/40"
           />
+          <span className="text-xs text-black/50">We’ll reply to this address.</span>
         </label>
         <label className="flex flex-col gap-2 text-sm font-medium sm:col-span-2">
           Message
@@ -44,14 +78,29 @@ function Contact() {
             required
             className="rounded-xl border border-black/15 px-4 py-3 text-sm font-normal text-black/80 outline-none transition focus:border-violentBlue focus:ring-2 focus:ring-violentBlue/40"
           ></textarea>
+          <span className="text-xs text-black/50">Include scope, timeline, or links if available.</span>
         </label>
-        <div className="sm:col-span-2">
+        {status === 'success' && (
+          <div className="sm:col-span-2 rounded-xl border border-green-500/30 bg-green-50 px-4 py-3 text-sm text-green-700">
+            {feedback}
+          </div>
+        )}
+        {status === 'error' && (
+          <div className="sm:col-span-2 rounded-xl border border-red-500/30 bg-red-50 px-4 py-3 text-sm text-red-700">
+            {feedback}
+          </div>
+        )}
+        <div className="sm:col-span-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center rounded-full bg-violentBlue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-violentBlue/20 transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violentBlue focus-visible:ring-offset-2 sm:w-auto"
+            disabled={status === 'loading'}
+            className="inline-flex w-full items-center justify-center rounded-full bg-violentBlue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-violentBlue/20 transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violentBlue focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
           >
-            Send Message
+            {status === 'loading' ? 'Sending…' : 'Send Message'}
           </button>
+          <p className="text-xs text-black/50">
+            I respect your privacy. Your details are only used to respond to your inquiry.
+          </p>
         </div>
       </form>
     </section>
