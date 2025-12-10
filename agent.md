@@ -19,7 +19,13 @@
 - No env vars needed for starter; update Formspree endpoint in `src/components/Contact.jsx` when ready.
 
 ## Git
-- Repository initialized and first commit created.
 - Remote: `origin https://github.com/KnightMarc/vibe-portfolio-site.git`
-- Latest commit on `master`: `chore: initial commit`
+- Commits so far:
+  - `chore: initial commit`
+  - `docs: add agent notes`
+- Pending changes to commit:
+  - Updated hero copy to reflect BSIT/Network Administration background.
+  - Updated about copy to highlight BSIT, network admin, AI-assisted dev focus.
+  - Replaced `agent.mb` with `agent.md` (notes file).
+- Suggested commit message for current changes: `content: refresh copy and update agent notes`
 

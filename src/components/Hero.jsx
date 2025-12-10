@@ -9,10 +9,15 @@ function Hero() {
       </p>
       <div className="flex flex-col gap-6 max-w-3xl">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight heading-font">
-          Bold digital experiences for modern brands.
+          Hi, I’m Knight Marc Xavier C. Ballao — a BSIT graduate specializing in
+          Network Administration.
         </h1>
         <p className="text-lg text-black/70 leading-relaxed">
-          I&apos;m Knight Marc Xavier C. Ballao — a multi-disciplinary creator crafting clean, high-impact experiences. This is a placeholder intro you can replace with your own story and value.
+          I build modern, practical solutions using Vibe Coding and I’m driven
+          to bring new ideas into startups and real-world projects.
+        </p>
+        <p className="text-base font-semibold text-black/80">
+          Building smart solutions with bold ideas.
         </p>
       </div>
       <div className="flex flex-wrap items-center gap-4">

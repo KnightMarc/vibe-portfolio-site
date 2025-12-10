@@ -10,7 +10,11 @@ function About() {
       </div>
       <div className="md:col-span-2">
         <p className="text-lg leading-relaxed text-black/75">
-          I help brands and teams craft focused digital products. This placeholder paragraph is ready for your story, highlighting your expertise, background, and the value you bring to clients and collaborators.
+          I’m a fresh BSIT graduate with a focus on network administration and
+          AI-assisted development. I enjoy turning concepts into efficient,
+          real-world applications — from small tools to startup-ready projects.
+          I’m always exploring new technologies and improving my craft through
+          hands-on building, testing, and continuous learning.
         </p>
       </div>
     </section>
