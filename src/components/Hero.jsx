@@ -5,20 +5,32 @@ function Hero() {
       className="container mt-28 flex flex-col gap-12 py-24 md:mt-32 md:py-32 lg:py-40"
     >
       <p className="text-sm uppercase tracking-wider text-violentBlue font-medium">
-        Portfolio / Designer / Developer
+        Tech-Savvy Virtual Assistant / Automation Enthusiast / Vibe Coder
       </p>
-      <div className="flex flex-col max-w-3xl">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight heading-font">
-          Hi, I’m Knight Marc Xavier C. Ballao — a BSIT graduate specializing in
-          Network Administration.
-        </h1>
-        <p className="mt-4 text-lg text-black/70 leading-relaxed font-normal">
-          I build modern, practical solutions using Vibe Coding and I’m driven
-          to bring new ideas into startups and real-world projects.
-        </p>
-        <p className="mt-4 text-base font-semibold text-black/80">
-          Building smart solutions with bold ideas.
-        </p>
+      <div className="flex flex-col gap-10 md:flex-row md:items-center">
+        <div className="flex flex-col max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight heading-font">
+            Hi, I’m Knight Marc Xavier C. Ballao —  tech-savvy
+            Virtual Assistant.
+          </h1>
+          <p className="mt-4 text-lg text-black/70 leading-relaxed font-normal">
+            I help busy founders and teams with organized, reliable virtual
+            assistance — inbox and calendar management, research, documentation,
+            and light content support — while also building modern, practical
+            solutions using Vibe Coding.
+          </p>
+          <p className="mt-4 text-base font-semibold text-black/80">
+            Remote support, clear communication, and smart systems to keep your
+            work moving.
+          </p>
+        </div>
+        <div className="w-full max-w-xs md:max-w-sm">
+          <img
+            src="/profile.png"
+            alt="Portrait of Knight Marc Xavier C. Ballao"
+            className="w-full rounded-3xl shadow-lg object-cover aspect-[3/4]"
+          />
+        </div>
       </div>
       <div className="mt-6 flex flex-wrap items-center gap-4">
         <a

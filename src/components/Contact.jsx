@@ -40,7 +40,8 @@ function Contact() {
       <div className="flex flex-col gap-3">
         <h2 className="text-2xl font-semibold heading-font">Contact</h2>
         <p className="text-sm text-black/60">
-          Ready to collaborate? Drop a line below.
+          Looking for a reliable, tech-savvy Virtual Assistant or help on a dev
+          project? Tell me what you need below.
         </p>
       </div>
       <form
@@ -74,7 +75,7 @@ function Contact() {
           <textarea
             name="message"
             rows="4"
-            placeholder="Tell me about your project"
+            placeholder="Tell me about your business or project and how I can help as your VA or developer."
             required
             className="rounded-xl border border-black/15 px-4 py-3 text-sm font-normal text-black/80 outline-none transition focus:border-violentBlue focus:ring-2 focus:ring-violentBlue/40"
           ></textarea>

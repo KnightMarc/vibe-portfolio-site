@@ -43,7 +43,8 @@ function Projects() {
       <div className="flex flex-col gap-3">
         <h2 className="text-2xl font-semibold heading-font">Projects</h2>
         <p className="text-sm text-black/60">
-          A quick grid of recent work — swap in your real case studies.
+          A mix of development builds, systems setup, and virtual assistant
+          style support work — swap in your real case studies.
         </p>
       </div>
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
