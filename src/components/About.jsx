@@ -34,10 +34,10 @@ function About() {
       >
         <div className="space-y-3">
           <p className="text-lg leading-relaxed text-black/75 dark:text-white/80">
-            As a 3rd-year BSIT student and certified professional (CompTIA ITF+, CSS NC-II), I bridge the gap between complex technical infrastructure and operational efficiency. My expertise spans across designing seamless AI-driven workflow automations (n8n, Zapier), configuring and maintaining reliable network systems, and applying Agile project management principles to coordinate teams and deliver scalable tech solutions.
+            As a 3rd-year BSIT student and certified professional (CompTIA ITF+, CSS NC-II), I bridge the gap between complex technical infrastructure and operational efficiency. I approach every challenge through a structured project lifecycle—from rigorous <strong>Planning & Initiation</strong> to comprehensive <strong>Documentation</strong> and <strong>Risk Management</strong>.
           </p>
           <p className="text-sm leading-relaxed text-black/70 dark:text-white/70">
-            Whether I’m automating repetitive processes, servicing hardware and local area networks, or managing high-level software operations, my goal is to provide the reliable technical backbone your business needs to grow without friction. I thrive on translating technical complexity into actionable, successful projects.
+            My expertise spans across designing seamless AI-driven workflow automations (n8n, Zapier), configuring and maintaining reliable network systems, and applying Agile project management principles to coordinate teams. Whether I’m automating repetitive processes or servicing local area networks, my goal is to deliver scalable, secure, and well-documented technical solutions that drive measurable business value.
           </p>
         </div>
       </motion.div>
