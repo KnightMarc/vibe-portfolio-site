@@ -2,37 +2,22 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
-    title: 'Project One',
+    title: 'Enterprise Workflow Automation',
     description:
-      'Placeholder description for a featured build. Summarize outcome and value.',
-    tags: ['React', 'Vite', 'TailwindCSS'],
+      'Engineered an automated calendar management system and intelligent auto-reply mechanisms to handle appointment conflicts. Designed and deployed operational workflows using n8n, Google Calendar, and Telegram APIs to drastically reduce manual coordination as an AI Automation Intern.',
+    tags: ['n8n', 'Zapier', 'API Integration', 'Automation'],
   },
   {
-    title: 'Project Two',
+    title: 'UniCapp Interactive Ordering System',
     description:
-      'High-level highlight of what was delivered. Keep this concise and bold.',
-    tags: ['Node.js', 'Automation', 'Networking'],
+      'Led the end-to-end development of an interactive visual ordering system utilizing React Native and Firebase. Applied Agile project management principles to coordinate team tasks, ensure comprehensive technical documentation, and successfully meet internal sprint deadlines as a Project Manager.',
+    tags: ['Agile', 'Project Management', 'Technical Documentation'],
   },
   {
-    title: 'Project Three',
+    title: 'Network Infrastructure & Hardware Servicing',
     description:
-      'Add a short note on tech, role, or impact. Swap with your real work.',
-    tags: ['AI / Vibe Coding', 'React', 'APIs'],
-  },
-  {
-    title: 'Project Four',
-    description: 'Another placeholder card ready for real case study details.',
-    tags: ['TailwindCSS', 'Design Systems'],
-  },
-  {
-    title: 'Project Five',
-    description: 'Brief copy about the solution, process, or metrics.',
-    tags: ['Networking', 'Automation'],
-  },
-  {
-    title: 'Project Six',
-    description: 'Optional extra card to round out the grid with variety.',
-    tags: ['React', 'AI / Vibe Coding'],
+      'Proven expertise as a Certified CSS NC-II Technician in assembling and disassembling PC hardware, configuring routers, setting up Local Area Networks (LAN), and performing RJ45 cable capping. Proficient in diagnosing and maintaining both Windows and Linux operating systems.',
+    tags: ['LAN Setup', 'Router Configuration', 'Hardware Servicing'],
   },
 ];
 
@@ -43,10 +28,9 @@ function Projects() {
       className="container flex flex-col gap-12 border-t border-black/10 py-16 md:py-20 mt-24 md:mt-28 dark:border-white/10"
     >
       <div className="flex flex-col gap-3">
-        <h2 className="text-2xl font-semibold heading-font dark:text-white">Projects</h2>
+        <h2 className="text-2xl font-semibold heading-font dark:text-white">Projects & Expertise</h2>
         <p className="text-sm text-black/60 dark:text-white/60">
-          A mix of development builds, systems setup, and virtual assistant
-          style support work — swap in your real case studies.
+          A showcase of my work spanning AI workflow automations, complex technical project management, and hardware/network infrastructure setups.
         </p>
       </div>
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

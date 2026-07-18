@@ -11,7 +11,7 @@ function Hero() {
         </span>
       </div>
       <p className="text-sm uppercase tracking-wider text-violentBlue font-medium dark:text-violet-400">
-        TECHNICAL SOLUTIONS ARCHITECT / WORKFLOW AUTOMATION EXPERT / VIBE CODER
+        AUTOMATION SPECIALIST / NETWORK TECHNICIAN / PROJECT MANAGER
       </p>
       <div className="flex flex-col gap-10 md:flex-row md:items-center">
         <div className="flex flex-col max-w-3xl">
@@ -19,7 +19,7 @@ function Hero() {
             Knight Marc Xavier
           </h1>
           <p className="mt-4 text-lg text-black/70 leading-relaxed font-normal dark:text-white/70">
-            I build automated workflows, craft intuitive web experiences via Vibe Coding, and provide elite technical assistance to scale your business.
+            Detail-oriented IT professional specializing in engineering automated workflows, maintaining robust network infrastructures, and leading technical projects to successful delivery.
           </p>
 
         </div>

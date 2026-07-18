@@ -34,11 +34,10 @@ function About() {
       >
         <div className="space-y-3">
           <p className="text-lg leading-relaxed text-black/75 dark:text-white/80">
-            I don’t just manage tasks; I optimize systems. With a major in Network Administration, I bring a deep understanding of how tech stacks and digital infrastructures operate beneath the surface. This technical foundation allows me to handle complex workflows and web environments with a level of security and efficiency most virtual assistants can’t match.
-
+            As a 3rd-year BSIT student and certified professional (CompTIA ITF+, CSS NC-II), I bridge the gap between complex technical infrastructure and operational efficiency. My expertise spans across designing seamless AI-driven workflow automations (n8n, Zapier), configuring and maintaining reliable network systems, and applying Agile project management principles to coordinate teams and deliver scalable tech solutions.
           </p>
           <p className="text-sm leading-relaxed text-black/70 dark:text-white/70">
-            Whether I’m automating your repetitive processes, refining your web presence through Vibe Coding, or managing high-level administrative operations, my goal is the same: to provide the "elite technical backbone" your business needs to grow without friction. I bridge the gap between technical complexity and seamless business support.
+            Whether I’m automating repetitive processes, servicing hardware and local area networks, or managing high-level software operations, my goal is to provide the reliable technical backbone your business needs to grow without friction. I thrive on translating technical complexity into actionable, successful projects.
           </p>
         </div>
       </motion.div>
