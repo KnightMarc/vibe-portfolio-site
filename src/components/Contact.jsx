@@ -38,10 +38,14 @@ function Contact() {
       className="container flex flex-col gap-10 border-t border-black/10 dark:border-white/10 py-16 md:py-20"
     >
       <div className="flex flex-col gap-3">
-        <h2 className="text-2xl font-semibold heading-font dark:text-white">Contact</h2>
+        <div className="flex items-center gap-2">
+          <span className="font-mono text-xs font-semibold text-violentBlue dark:text-violet-400 tracking-wider uppercase">
+            // 05. GET IN TOUCH
+          </span>
+        </div>
+        <h2 className="text-3xl lg:text-4xl font-bold heading-font dark:text-white">Contact & Collaboration</h2>
         <p className="text-sm text-black/60 dark:text-white/60">
-          Looking for a reliable, tech-savvy Virtual Assistant or help on a dev
-          project? Tell me what you need below.
+          Have an IT automation project, self-hosted pipeline need, or infrastructure inquiry? Send me a message below.
         </p>
       </div>
       <form
