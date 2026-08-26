@@ -12,7 +12,7 @@ const certifications = [
       'Demonstrated foundational proficiency across core IT concepts, hardware infrastructure, software development principles, database concepts, and security protocols.',
     skills: ['IT Infrastructure', 'Security Best Practices', 'Networking Concepts', 'System Diagnostics'],
     badgeBg: 'bg-cyan-500/10 text-cyan-600 dark:bg-cyan-500/20 dark:text-cyan-300 border border-cyan-500/20',
-    imageSrc: '/cert-comptia-itf.png.pdf',
+    imageSrc: '/cert-comptia-itf.pdf',
     verifyUrl: '',
   },
   {
@@ -24,7 +24,7 @@ const certifications = [
       'Certified technical mastery in assembling computer hardware, installing operating systems and server software, configuring network systems, and maintaining enterprise LAN environments.',
     skills: ['Enterprise LAN Setup', 'Hardware Assembly & Servicing', 'Router Configuration', 'Network Capping'],
     badgeBg: 'bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 border border-emerald-500/20',
-    imageSrc: '/cert-tesda-css-ncii.png.pdf',
+    imageSrc: '/cert-tesda-css-ncii.pdf',
     verifyUrl: '',
   },
 ];

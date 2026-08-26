@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   :root {
     color: #000000;
@@ -20,14 +24,6 @@
 }
 
 @layer utilities {
-  .bg-glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/20 dark:bg-darkCard/50 dark:border-white/10;
-  }
-  
-  .glass-card {
-    @apply bg-white/80 backdrop-blur-lg border border-black/5 dark:bg-slate-800/40 dark:border-white/10 shadow-sm transition-all duration-300;
-  }
-
   .neon-glow {
     @apply shadow-[0_0_15px_rgba(58,79,255,0.5)] border-transparent;
   }

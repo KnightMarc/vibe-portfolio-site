@@ -21,13 +21,13 @@ const projects = [
       customer: {
         title: 'Customer Order Flow',
         description: 'Interactive visual menu customization, real-time item pairing, cart management, and instant order placement.',
-        embedUrl: '/unicapp-customer-demo.mp4.mp4',
+        embedUrl: '/unicapp-customer-demo.mp4',
         features: ['Dynamic Menu Customization', 'Real-time Item Pairing', 'Instant Cart Synchronization'],
       },
       admin: {
         title: 'Admin Management Portal',
         description: 'Real-time order queue management, inventory updates, rule engine configuration, and sales metrics dashboard.',
-        embedUrl: '/unicapp-admin-demo.mp4.mp4',
+        embedUrl: '/unicapp-admin-demo.mp4',
         features: ['Order Queue Monitoring', 'Dynamic Inventory Control', 'Rule-Based AI Logic Tuning'],
       },
     },
