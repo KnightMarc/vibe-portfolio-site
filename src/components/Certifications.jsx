@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import CertModal from './CertModal.jsx';
 
 const certifications = [
   {
@@ -10,6 +12,8 @@ const certifications = [
       'Demonstrated foundational proficiency across core IT concepts, hardware infrastructure, software development principles, database concepts, and security protocols.',
     skills: ['IT Infrastructure', 'Security Best Practices', 'Networking Concepts', 'System Diagnostics'],
     badgeBg: 'bg-cyan-500/10 text-cyan-600 dark:bg-cyan-500/20 dark:text-cyan-300 border border-cyan-500/20',
+    imageSrc: '/cert-comptia-itf.png.pdf',
+    verifyUrl: '',
   },
   {
     title: 'Computer Systems Servicing NC-II',
@@ -20,10 +24,20 @@ const certifications = [
       'Certified technical mastery in assembling computer hardware, installing operating systems and server software, configuring network systems, and maintaining enterprise LAN environments.',
     skills: ['Enterprise LAN Setup', 'Hardware Assembly & Servicing', 'Router Configuration', 'Network Capping'],
     badgeBg: 'bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 border border-emerald-500/20',
+    imageSrc: '/cert-tesda-css-ncii.png.pdf',
+    verifyUrl: '',
   },
 ];
 
 function Certifications() {
+  const [selectedCert, setSelectedCert] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenCert = (cert) => {
+    setSelectedCert(cert);
+    setIsModalOpen(true);
+  };
+
   return (
     <section
       id="certifications"
@@ -39,7 +53,7 @@ function Certifications() {
           Certifications & Industry Standards
         </h2>
         <p className="text-sm text-black/60 dark:text-white/60">
-          Verified technical credentials validating enterprise networking proficiency, IT infrastructure standards, and system servicing rigor.
+          Verified technical credentials validating enterprise networking proficiency, IT infrastructure standards, and system servicing rigor. Click any certificate card to view the official document.
         </p>
       </div>
 
@@ -51,15 +65,16 @@ function Certifications() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: index * 0.15 }}
-            className="flex flex-col justify-between rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-violentBlue/50 dark:bg-darkCard/50 dark:border-white/10 dark:backdrop-blur-md dark:hover:neon-glow relative overflow-hidden group"
+            onClick={() => handleOpenCert(cert)}
+            className="flex flex-col justify-between rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-violentBlue/50 dark:bg-darkCard/50 dark:border-white/10 dark:backdrop-blur-md dark:hover:neon-glow relative overflow-hidden group cursor-pointer"
           >
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <span className={`inline-block rounded-full px-3 py-1 text-xs font-mono font-semibold ${cert.badgeBg}`}>
                   {cert.badgeText}
                 </span>
-                <span className="text-xs font-mono text-black/50 dark:text-white/50">
-                  CODE: {cert.code}
+                <span className="text-xs font-mono text-black/50 dark:text-white/50 flex items-center gap-1">
+                  CODE: {cert.code} 🔍
                 </span>
               </div>
 
@@ -77,19 +92,31 @@ function Certifications() {
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-black/5 dark:border-white/10 flex flex-wrap gap-2">
-              {cert.skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="rounded-md bg-black/5 px-2.5 py-1 text-xs font-mono text-black/75 dark:bg-white/10 dark:text-white/80"
-                >
-                  {skill}
-                </span>
-              ))}
+            <div className="mt-6 pt-4 border-t border-black/5 dark:border-white/10 flex items-center justify-between flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2">
+                {cert.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-md bg-black/5 px-2.5 py-1 text-xs font-mono text-black/75 dark:bg-white/10 dark:text-white/80"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <span className="text-xs font-mono text-violentBlue dark:text-violet-400 font-semibold group-hover:underline">
+                View Certificate Document →
+              </span>
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Certificate Modal */}
+      <CertModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        cert={selectedCert}
+      />
     </section>
   );
 }

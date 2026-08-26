@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 
-function VideoShowcase() {
-  // Replace YOUR_VIDEO_ID below with your actual unlisted YouTube Video ID or full embed link
-  const embedUrl = 'https://www.youtube.com/embed/YOUR_VIDEO_ID';
+function VideoShowcase({ videoSrc = 'https://www.youtube.com/embed/V8QI__Y7-u4' }) {
+  // If videoSrc is a YouTube/Vimeo link, render an <iframe>.
+  // If videoSrc is a local file (e.g. '/css-video-demo.mp4'), render an HTML5 <video> player!
+  const isEmbed = videoSrc.includes('youtube.com') || videoSrc.includes('youtu.be') || videoSrc.includes('vimeo.com');
 
   return (
     <section
@@ -16,10 +17,10 @@ function VideoShowcase() {
           </span>
         </div>
         <h2 className="text-3xl lg:text-4xl font-bold heading-font dark:text-white">
-          Custom Blend Engine Demonstration
+          CSS NC-II & Enterprise Networking Demonstration
         </h2>
         <p className="text-sm text-black/60 dark:text-white/60">
-          A video walk-through demonstrating the automated backend blend engine, accompanied by a clean English technical execution summary.
+          A video walk-through demonstrating standardized enterprise local area network (LAN) cabling, router/switch configuration, and system servicing protocols.
         </p>
       </div>
 
@@ -33,17 +34,26 @@ function VideoShowcase() {
           className="lg:col-span-7 flex flex-col gap-2"
         >
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-black/10 shadow-lg dark:border-white/20 bg-black">
-            <iframe
-              className="w-full h-full border-0"
-              src={embedUrl}
-              title="Custom Blend Engine Technical Showcase"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+            {isEmbed ? (
+              <iframe
+                className="w-full h-full border-0"
+                src={videoSrc}
+                title="CSS NC-II Enterprise Networking Technical Showcase"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <video
+                className="w-full h-full object-contain"
+                controls
+                playsInline
+                preload="metadata"
+                src={videoSrc}
+              >
+                Your browser does not support the video tag.
+              </video>
+            )}
           </div>
-          <span className="font-mono text-xs text-black/50 dark:text-white/50 text-center">
-            * Note: To swap with your unlisted YouTube video ID, update `YOUR_VIDEO_ID` in `VideoShowcase.jsx`.
-          </span>
         </motion.div>
 
         {/* English Workflow Summary */}
@@ -55,44 +65,44 @@ function VideoShowcase() {
           className="lg:col-span-5 flex flex-col gap-5 rounded-2xl border border-black/10 bg-white p-6 shadow-sm dark:bg-darkCard/50 dark:border-white/10 dark:backdrop-blur-md"
         >
           <div className="space-y-2 border-b border-black/10 dark:border-white/10 pb-4">
-            <span className="inline-block rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-mono font-semibold text-cyan-600 dark:bg-cyan-500/20 dark:text-cyan-300 border border-cyan-500/20">
-              ENGLISH TECHNICAL BREAKDOWN
+            <span className="inline-block rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-mono font-semibold text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 border border-emerald-500/20">
+              TESDA CSS NC-II TECHNICAL BREAKDOWN
             </span>
             <h3 className="text-xl font-semibold heading-font dark:text-white">
-              Backend Execution & Data Flow
+              Enterprise Network & Servicing Execution
             </h3>
           </div>
 
           <div className="space-y-4 text-sm text-black/75 dark:text-white/80 leading-relaxed">
             <div className="flex items-start gap-3">
-              <div className="h-2 w-2 rounded-full bg-cyan-500 mt-2 shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
               <div>
-                <strong className="block text-black dark:text-white font-mono text-xs uppercase tracking-wide">1. Automated Ingestion & Webhooks</strong>
-                Receives incoming request payloads instantly via webhooks, validating data structure and client parameters.
+                <strong className="block text-black dark:text-white font-mono text-xs uppercase tracking-wide">1. Hardware Diagnostics & Assembly</strong>
+                Executes component verification, motherboard cabling, power diagnostics, and failure-proof system assembly under national standards.
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="h-2 w-2 rounded-full bg-cyan-500 mt-2 shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
               <div>
-                <strong className="block text-black dark:text-white font-mono text-xs uppercase tracking-wide">2. Rule-Based Blend Engine Processing</strong>
-                Executes core blend algorithms to calculate custom ratio parameters, process inventory variables, and format system outputs dynamically.
+                <strong className="block text-black dark:text-white font-mono text-xs uppercase tracking-wide">2. LAN Topology & Capping</strong>
+                Crimps and tests straight-through and crossover UTP cables, verifying continuity and signal stability across enterprise workstation nodes.
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="h-2 w-2 rounded-full bg-cyan-500 mt-2 shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
               <div>
-                <strong className="block text-black dark:text-white font-mono text-xs uppercase tracking-wide">3. Infrastructure Orchestration</strong>
-                Leverages containerized microservices and automated pipeline triggers for uninterrupted execution with zero operational downtime.
+                <strong className="block text-black dark:text-white font-mono text-xs uppercase tracking-wide">3. Router & Switch Configuration</strong>
+                Configures IP address schemes, subnet masks, gateway routes, DHCP pools, and security policies on enterprise router hardware.
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="h-2 w-2 rounded-full bg-cyan-500 mt-2 shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
               <div>
-                <strong className="block text-black dark:text-white font-mono text-xs uppercase tracking-wide">4. Measurable Business Outcome</strong>
-                Drastically eliminates manual processing overhead, ensures consistency across ordering systems, and accelerates turnaround times for clients.
+                <strong className="block text-black dark:text-white font-mono text-xs uppercase tracking-wide">4. System Deployment & Maintenance</strong>
+                Deploys OS installations, driver provisioning, and automated backup routines to guarantee enterprise uptime.
               </div>
             </div>
           </div>
