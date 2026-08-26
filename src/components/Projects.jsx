@@ -48,23 +48,41 @@ const projects = [
   },
   {
     id: 3,
-    title: 'SynerGrid Enterprise Workflow Automation',
-    shortDescription: 'Self-hosted n8n automation pipelines containerized with Docker and securely exposed via ngrok endpoints to streamline enterprise scheduling.',
-    challenge: 'Manual appointment management, fragmented API services, and self-hosted infrastructure requirements demanded automated synchronization without high cloud overhead.',
-    approach: 'Deployed self-hosted n8n instances inside isolated Docker containers, established secure ngrok tunnels, and integrated Telegram & Google APIs.',
-    solution: 'Engineered end-to-end automated pipelines featuring collision detection, automated auto-replies, and multi-platform trigger handling.',
-    results: 'Eliminated manual scheduling bottlenecks, guaranteed zero-downtime microservice orchestration, and significantly boosted administrative efficiency.',
-    tags: ['n8n', 'Docker', 'ngrok', 'Workflow Blueprint'],
+    title: 'SynergyGrid LLC: Autonomous Enterprise AI Automation Suite',
+    shortDescription: 'Dual production n8n automation pipelines engineered with minimal supervision, containerized with Docker, and exposed via secure ngrok endpoints to orchestrate enterprise scheduling and legal agreement monitoring.',
+    spotlightBadge: '★ Internship Spotlight — Engineered with Minimal Supervision',
+    challenge: 'Manual appointment handling, unmonitored legal agreement follow-ups, and fragmented API microservices demanded an automated, self-hosted infrastructure without high cloud SaaS overhead.',
+    approach: 'Autonomously designed and deployed two production n8n workflow pipelines inside isolated Docker containers, established secure ngrok webhook tunnels, and integrated Google Gemini LLM models for intent classification and email draft generation.',
+    solution: 'Engineered an end-to-end multi-agent AI system featuring calendar conflict engines, 3-day SOP agreement tracking in Google Sheets DB, contextual follow-up drafting, and 1-click human-in-the-loop approval webhooks across Telegram & Slack.',
+    results: 'Eliminated administrative scheduling bottlenecks, guaranteed zero-downtime microservice orchestration, and established automated lead escalation for stalled legal agreements.',
+    tags: ['Google Gemini LLM', 'n8n Pipelines', 'Docker', 'ngrok', 'Google Sheets DB', 'Slack & Telegram Webhooks'],
     tagBg: 'bg-cyan-500/10 text-cyan-600 dark:bg-cyan-500/20 dark:text-cyan-300 border border-cyan-500/20',
+    hasSynergyGridViewer: true,
     hasWorkflowModal: true,
+    synergyGridTabs: {
+      meetingScheduler: {
+        title: 'Pipeline 1: Autonomous AI Meeting Scheduler',
+        description: 'Parses raw email intent via Google Gemini LLM, checks Google Calendar availability, calculates conflict-free alternative time slots, and routes interactive 1-click booking webhooks to Telegram & Slack.',
+        imageSrc: '/synergrid-n8n-workflow.png',
+        features: ['Dual Gemini LLM Agents', 'Calendar Collision Engine', 'Telegram & Slack 1-Click Approval'],
+      },
+      agreementMonitor: {
+        title: 'Pipeline 2: AI Agreement Reply Monitor & Escalation Suite',
+        description: 'Monitors sent legal agreements, tracks 3-day turnaround deadlines in Google Sheets DB, generates tone-adapted follow-up drafts using Gemini 2.5 Flash, and escalates stale leads to Slack.',
+        imageSrc: '/synergrid-agreement-monitor.png',
+        features: ['3-Day Turnaround Tracking', 'Gemini Draft Generator', 'Slack Webhook Approval & Escalation'],
+      },
+    },
   },
 ];
 
 function Projects() {
   const [expandedId, setExpandedId] = useState(null);
   const [activeUnicappTab, setActiveUnicappTab] = useState('customer');
+  const [activeSynergyGridTab, setActiveSynergyGridTab] = useState('meetingScheduler');
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
   const [isWorkflowModalOpen, setIsWorkflowModalOpen] = useState(false);
+  const [selectedWorkflowKey, setSelectedWorkflowKey] = useState('meetingScheduler');
   const [selectedPdfUrl, setSelectedPdfUrl] = useState('');
   const [selectedPdfTitle, setSelectedPdfTitle] = useState('');
 
@@ -76,6 +94,11 @@ function Projects() {
     setSelectedPdfUrl(url);
     setSelectedPdfTitle(title);
     setIsPdfModalOpen(true);
+  };
+
+  const handleOpenWorkflowModal = (workflowKey = 'meetingScheduler') => {
+    setSelectedWorkflowKey(workflowKey);
+    setIsWorkflowModalOpen(true);
   };
 
   return (
@@ -91,7 +114,7 @@ function Projects() {
         </div>
         <h2 className="text-3xl lg:text-4xl font-bold heading-font dark:text-white">Featured Builds & Engineering</h2>
         <p className="text-sm text-black/60 dark:text-white/60">
-          Selected technical projects highlighting mobile app engineering, enterprise networking modules, and containerized n8n workflow automations.
+          Selected technical projects highlighting autonomous AI workflows engineered during internship, mobile app development, and enterprise networking modules.
         </p>
       </div>
 
@@ -103,10 +126,18 @@ function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex flex-col gap-4 rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 ease-out hover:shadow-md hover:border-violentBlue/50 dark:bg-darkCard/50 dark:border-white/10 dark:backdrop-blur-md dark:hover:neon-glow group relative"
+            className={`flex flex-col gap-4 rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 ease-out hover:shadow-md hover:border-violentBlue/50 dark:bg-darkCard/50 dark:border-white/10 dark:backdrop-blur-md dark:hover:neon-glow group relative ${
+              project.spotlightBadge ? 'lg:col-span-2 ring-1 ring-cyan-500/30' : ''
+            }`}
           >
+            {project.spotlightBadge && (
+              <div className="inline-flex items-center gap-2 self-start rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-mono font-bold text-cyan-600 dark:bg-cyan-500/20 dark:text-cyan-300 border border-cyan-500/30">
+                {project.spotlightBadge}
+              </div>
+            )}
+
             <div className="flex items-center justify-between gap-4">
-              <h3 className="text-xl font-semibold heading-font dark:text-white group-hover:text-violentBlue transition-colors duration-300">
+              <h3 className="text-xl sm:text-2xl font-bold heading-font dark:text-white group-hover:text-violentBlue transition-colors duration-300">
                 {project.title}
               </h3>
               <span className="h-3 w-3 rounded-full bg-violentBlue dark:shadow-[0_0_8px_rgba(58,79,255,0.8)] shrink-0"></span>
@@ -154,7 +185,6 @@ function Projects() {
                     {project.demoTabs[activeUnicappTab].title}
                   </h4>
                   
-                  {/* Video Player */}
                   {project.demoTabs[activeUnicappTab].embedUrl && (
                     <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-black/10 dark:border-white/10 bg-black">
                       <video
@@ -176,6 +206,85 @@ function Projects() {
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {project.demoTabs[activeUnicappTab].features.map((feat) => (
                       <span key={feat} className="text-[11px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-700 dark:text-purple-300">
+                        ✓ {feat}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* SynergyGrid Interactive Workflow Canvas Viewer */}
+            {project.hasSynergyGridViewer && (
+              <div className="flex flex-col gap-3 my-2 p-4 rounded-xl bg-slate-50 border border-black/10 dark:bg-slate-900/60 dark:border-white/10">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-black/10 dark:border-white/10 pb-2 gap-2">
+                  <span className="font-mono text-xs font-semibold text-cyan-600 dark:text-cyan-400 uppercase tracking-wide flex items-center gap-1.5">
+                    <span className="h-2 w-2 rounded-full bg-cyan-500 animate-ping"></span>
+                    🗺️ Production n8n Canvas Visualizer
+                  </span>
+                  <div className="flex gap-1.5">
+                    <button
+                      type="button"
+                      onClick={() => setActiveSynergyGridTab('meetingScheduler')}
+                      className={`px-3 py-1 text-xs font-mono rounded-lg transition-all ${
+                        activeSynergyGridTab === 'meetingScheduler'
+                          ? 'bg-cyan-600 text-white font-semibold shadow-sm'
+                          : 'bg-black/5 dark:bg-white/10 text-black/70 dark:text-white/70 hover:bg-black/10'
+                      }`}
+                    >
+                      ⚡ 1. AI Scheduler
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveSynergyGridTab('agreementMonitor')}
+                      className={`px-3 py-1 text-xs font-mono rounded-lg transition-all ${
+                        activeSynergyGridTab === 'agreementMonitor'
+                          ? 'bg-cyan-600 text-white font-semibold shadow-sm'
+                          : 'bg-black/5 dark:bg-white/10 text-black/70 dark:text-white/70 hover:bg-black/10'
+                      }`}
+                    >
+                      📋 2. Agreement Monitor
+                    </button>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h4 className="font-semibold text-sm text-black dark:text-white">
+                      {project.synergyGridTabs[activeSynergyGridTab].title}
+                    </h4>
+                    <button
+                      type="button"
+                      onClick={() => handleOpenWorkflowModal(activeSynergyGridTab)}
+                      className="text-xs font-mono text-cyan-600 dark:text-cyan-400 hover:underline"
+                    >
+                      Inspect JSON & Steps →
+                    </button>
+                  </div>
+
+                  <div
+                    onClick={() => handleOpenWorkflowModal(activeSynergyGridTab)}
+                    className="relative w-full aspect-[16/9] rounded-lg overflow-hidden border border-black/10 dark:border-white/10 bg-slate-950 cursor-pointer group/canvas"
+                  >
+                    <img
+                      src={project.synergyGridTabs[activeSynergyGridTab].imageSrc}
+                      alt={project.synergyGridTabs[activeSynergyGridTab].title}
+                      className="w-full h-full object-contain transition-transform duration-300 group-hover/canvas:scale-[1.01]"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/canvas:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="px-4 py-2 rounded-lg bg-black/80 text-white text-xs font-mono font-semibold backdrop-blur-sm border border-white/20 shadow-lg">
+                        🔍 Open Interactive Inspector & JSON Blueprint
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-black/70 dark:text-white/70 leading-relaxed">
+                    {project.synergyGridTabs[activeSynergyGridTab].description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {project.synergyGridTabs[activeSynergyGridTab].features.map((feat) => (
+                      <span key={feat} className="text-[11px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-700 dark:text-cyan-300">
                         ✓ {feat}
                       </span>
                     ))}
@@ -227,13 +336,13 @@ function Projects() {
               {project.hasWorkflowModal && (
                 <button
                   type="button"
-                  onClick={() => setIsWorkflowModalOpen(true)}
+                  onClick={() => handleOpenWorkflowModal(activeSynergyGridTab)}
                   className="inline-flex items-center gap-2 rounded-lg bg-cyan-500/10 dark:bg-cyan-500/20 px-4 py-2 text-xs font-mono font-semibold text-cyan-600 dark:text-cyan-300 transition-all hover:bg-cyan-600 hover:text-white dark:hover:bg-cyan-600 dark:hover:text-white border border-cyan-500/20"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
                   </svg>
-                  View Workflow Blueprint (JSON)
+                  Inspect Dual Workflows & Production JSON Blueprints
                 </button>
               )}
             </div>
@@ -294,6 +403,7 @@ function Projects() {
       <WorkflowModal
         isOpen={isWorkflowModalOpen}
         onClose={() => setIsWorkflowModalOpen(false)}
+        initialWorkflowKey={selectedWorkflowKey}
       />
     </section>
   );
